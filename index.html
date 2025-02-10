@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Question</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            position: relative;
+            flex-direction: column;
+        }
+
+        /* Fullscreen background anime video */
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Message text */
+        .message {
+            font-size: 25px; /* Smaller text */
+            font-weight: bold;
+            color: white; /* White text */
+            text-shadow: 3px 3px 8px black; /* Black outline */
+            margin-bottom: 20px;
+        }
+
+        /* Question box */
+        .question-box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Buttons */
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .yes {
+            background-color: #28a745; /* Green */
+            color: white;
+        }
+
+        .no {
+            background-color: #dc3545; /* Red */
+            color: white;
+        }
+
+        .button:hover {
+            opacity: 0.8;
+        }
+
+        /* Response text */
+        .response {
+            font-size: 22px;
+            font-weight: bold;
+            color: white;
+            margin-top: 20px;
+            text-shadow: 3px 3px 8px black; /* Black outline */
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Anime Video -->
+    <video class="background-video" autoplay muted loop>
+        <source src="Kimi no Nawa - Comet falling.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Background Audio (MP4 or MP3) -->
+    <audio autoplay loop>
+        <source src="이하이 (LeeHi) - 'ONLY' Official MV (ENG⧸CHN).mp4" type="audio/mp4">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Message -->
+    <div class="message">Fuck Valentines, with you it's Valentines every day</div>
+
+    <!-- Question Box -->
+    <div class="question-box">
+        <p>Still, will you be my Valentine?</p>
+        <button class="button yes" onclick="showResponse(true)">Yes</button>
+        <button class="button no" onclick="showResponse(false)">No</button>
+    </div>
+
+    <!-- Response -->
+    <div class="response" id="responseText"></div>
+
+    <script>
+        function showResponse(answer) {
+            let responseText = document.getElementById("responseText");
+            responseText.style.display = "block";
+
+            if (answer) {
+                responseText.innerHTML = "Yayy! I knew it!";
+                responseText.style.color = "white"; /* White with black outline */
+            } else {
+                responseText.innerHTML = "Oooh..";
+                responseText.style.color = "white"; /* White with black outline */
+            }
+        }
+    </script>
+
+</body>
+</html>
